@@ -22,11 +22,11 @@ class Words {
 //: ### variables the same type? If not, why?
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: [They are not the same type, because the ones passed into the init function are wrapped, meaning they are implictly checked against nil values or not - and therefore includes a conditional that assigns wordA and wordB to strings if and only if they aren't nil while those set to the instance variables are just assigning the variables without a conditional check.]
 
 
 //: ## Q2: Variable Types and Function Types
-    func arePalindromes(_ words: [String]) -> Bool {
+    static func arePalindromes(_ words: [String]) -> Bool {
         let reversedWords = words.map() {String($0.characters.reversed())}
         let numElements = words.count
         
@@ -41,12 +41,12 @@ class Words {
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: [The problem is that the function was used in a static way and was not declared as a static function.]
 
 
 //: ## Q3: More Functions and Object Initialization
     class func isAnagram() -> Bool {
-        var countLetters : [Character : Int] //Line X
+        var countLetters :[Character : Int] = [Character : Int]()//Line X
         var lenA = self.wordA.characters.count
         var lenB = self.wordB.characters.count
         
@@ -89,7 +89,7 @@ class Words {
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: [countLetter was initialized but not instantiated. The function returns nil as a default value which is not of return type Bool and doesn't ever return true.]
     
     
 }
